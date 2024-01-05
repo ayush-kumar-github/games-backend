@@ -3,15 +3,7 @@ import React from "react";
 const Card = ({ product }) => {
   return (
     <div className="pb-3">
-      <img
-        className="w-[100%] rounded h-60"
-        src={
-          product.imageUrl.startsWith("/")
-            ? `https://gamess-mddm.onrender.com${product.imageUrl}`
-            : product.imageUrl
-        }
-        alt="iui"
-      />
+      <img className="w-[100%] rounded h-60" src={product.imageUrl} alt="iui" />
       <h2 className="text-xl font-bold mb-2 p-3">{product.name}</h2>
       <span className="text-gray-500 p-3">{product.brand}</span>
       <div>
