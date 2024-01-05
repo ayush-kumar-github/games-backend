@@ -7,7 +7,7 @@ const Card = ({ product }) => {
         className="w-[100%] rounded h-60"
         src={
           product.imageUrl.startsWith("/")
-            ? `http://localhost:5000${product.imageUrl}`
+            ? `https://gamess-mddm.onrender.com${product.imageUrl}`
             : product.imageUrl
         }
         alt="iui"
