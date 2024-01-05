@@ -34,11 +34,7 @@ const CartScreen = () => {
               <img
                 alt="product"
                 className="w-[40%] md:w-[30%] h-auto mb-2 md:mb-0"
-                src={
-                  product.imageUrl.startsWith("/")
-                    ? `https://gamess-mddm.onrender.com${product.imageUrl}`
-                    : product.imageUrl
-                }
+                src={product.imageUrl}
               />
               <div className="flex flex-col md:ml-4">
                 <h2 className="text-lg md:text-xl font-bold">{product.name}</h2>

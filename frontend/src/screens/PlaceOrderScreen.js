@@ -68,15 +68,7 @@ const PlaceOrderScreen = () => {
                   key={index}
                   className="flex justify-between items-center p-4 bg-gray-100 rounded-md mb-2"
                 >
-                  <img
-                    src={
-                      item.imageUrl.startsWith("/")
-                        ? `https://gamess-mddm.onrender.com${item.imageUrl}`
-                        : item.imageUrl
-                    }
-                    alt="fd"
-                    className="h-10"
-                  />
+                  <img src={item.imageUrl} alt="fd" className="h-10" />
                   <h2 className="text-gray-800">{item.name}</h2>
 
                   <h2>
