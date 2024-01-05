@@ -3,7 +3,11 @@ import React from "react";
 const Card = ({ product }) => {
   return (
     <div className="pb-3">
-      <img className="w-[100%] rounded h-80" src={product.imageUrl} alt="iui" />
+      <img
+        className="w-[100%] rounded h-80 sm:h-100"
+        src={product.imageUrl}
+        alt="iui"
+      />
       <h2 className="text-xl font-bold mb-2 p-3">{product.name}</h2>
       <span className="text-gray-500 p-3">{product.brand}</span>
       <div>
