@@ -27,7 +27,7 @@ const CartScreen = () => {
       <h3 className="font-bold text-2xl md:text-4xl mb-6 mt-6 text-center">
         Shopping Cart
       </h3>
-      {cartItems === 0 ? (
+      {cartItems.length === 0 ? (
         <h2>cart is empty</h2>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
