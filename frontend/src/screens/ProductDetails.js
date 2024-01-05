@@ -68,7 +68,7 @@ const ProductDetails = () => {
           alt="img"
           src={
             imageUrl.startsWith("/")
-              ? `http://localhost:5000${imageUrl}`
+              ? `https://gamess-mddm.onrender.com${imageUrl}`
               : imageUrl
           }
         />

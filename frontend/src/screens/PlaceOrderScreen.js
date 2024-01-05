@@ -71,7 +71,7 @@ const PlaceOrderScreen = () => {
                   <img
                     src={
                       item.imageUrl.startsWith("/")
-                        ? `http://localhost:5000${item.imageUrl}`
+                        ? `https://gamess-mddm.onrender.com${item.imageUrl}`
                         : item.imageUrl
                     }
                     alt="fd"

@@ -36,7 +36,7 @@ const CartScreen = () => {
                 className="w-[40%] md:w-[30%] h-auto mb-2 md:mb-0"
                 src={
                   product.imageUrl.startsWith("/")
-                    ? `http://localhost:5000${product.imageUrl}`
+                    ? `https://gamess-mddm.onrender.com${product.imageUrl}`
                     : product.imageUrl
                 }
               />
