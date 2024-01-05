@@ -32,19 +32,6 @@ const ProductEditScreen = () => {
   const [uploadProductImage, { isLoading: loadingUpload }] =
     useUploadProductImageMutation();
 
-  const fileUploadHandler = async (e) => {
-    console.log(e.target.files[0]);
-    const formData = new FormData();
-    formData.append("imageUrl", e.target.files[0]);
-    try {
-      const res = await uploadProductImage(formData).unwrap();
-      toast.success(res.message);
-      setImageUrl(res.imageUrl);
-    } catch (err) {
-      toast.error(err?.data?.message || err.error);
-    }
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -77,6 +64,18 @@ const ProductEditScreen = () => {
       setDescription(product.description);
     }
   }, [product]);
+
+  const fileUploadHandler = async (e) => {
+    const formData = new FormData();
+    formData.append("imageUrl", e.target.files[0]);
+    try {
+      const res = await uploadProductImage(formData).unwrap();
+      toast.success(res.message);
+      setImageUrl(res.imageUrl);
+    } catch (err) {
+      toast.error(err?.data?.message || err.error);
+    }
+  };
 
   return (
     <div className="max-w-md mx-auto p-4">
@@ -134,6 +133,7 @@ const ProductEditScreen = () => {
             />
 
             <input type="file" id="chooseFile" onChange={fileUploadHandler} />
+            {loadingUpload && <h1>loading.....</h1>}
           </div>
 
           <div className="mb-4">
