@@ -27,12 +27,12 @@ const CartScreen = () => {
       <h3 className="font-bold text-2xl md:text-4xl mb-6 mt-6 text-center">
         Shopping Cart
       </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          {cartItems === 0 ? (
-            <h2>cart is empty</h2>
-          ) : (
-            cartItems.map((product) => (
+      {cartItems === 0 ? (
+        <h2>cart is empty</h2>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            {cartItems.map((product) => (
               <div key={product._id} className="flex flex-col p-4 mb-4 md:mb-0">
                 <img
                   alt="product"
@@ -70,35 +70,37 @@ const CartScreen = () => {
                   </div>
                 </div>
               </div>
-            ))
-          )}
-        </div>
-        <div>
-          <div className="border-t pt-4">
-            <div className="flex justify-between mb-2">
-              <span className="text-md md:text-xl pr-5">Items Total:</span>
-              <span className="text-md md:text-xl">${itemsPrice}</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-md md:text-xl pr-9">Shipping:</span>
-              <span className="text-md md:text-xl">${shippingPrice}</span>
-            </div>
+            ))}
           </div>
+          <div>
+            <div className="border-t pt-4">
+              <div className="flex justify-between mb-2">
+                <span className="text-md md:text-xl pr-5">Items Total:</span>
+                <span className="text-md md:text-xl">${itemsPrice}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-md md:text-xl pr-9">Shipping:</span>
+                <span className="text-md md:text-xl">${shippingPrice}</span>
+              </div>
+            </div>
 
-          <div className="flex mt-4 border-t pt-4">
-            <span className="font-bold text-md md:text-xl pr-4 md:pr-16">
-              Total:
-            </span>
-            <span className="font-bold text-md md:text-xl">${totalPrice}</span>
+            <div className="flex mt-4 border-t pt-4">
+              <span className="font-bold text-md md:text-xl pr-4 md:pr-16">
+                Total:
+              </span>
+              <span className="font-bold text-md md:text-xl">
+                ${totalPrice}
+              </span>
+            </div>
+            <button
+              className="bg-red-300 text-md md:text-lg rounded px-4 py-2 mt-4"
+              onClick={checkoutHandler}
+            >
+              Continue
+            </button>
           </div>
-          <button
-            className="bg-red-300 text-md md:text-lg rounded px-4 py-2 mt-4"
-            onClick={checkoutHandler}
-          >
-            Continue
-          </button>
         </div>
-      </div>
+      )}
     </div>
   );
 };
