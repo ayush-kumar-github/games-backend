@@ -46,6 +46,10 @@ app.get("/api/config/paypal", (req, res) =>
 app.use(notFound);
 app.use(errorHandler);
 
+app.get("/", (req, res) => {
+  res.send("api is runnning happily");
+});
+
 app.listen(port, () =>
   console.log(`server is alive ${process.env.PORT || 5000}`)
 );
