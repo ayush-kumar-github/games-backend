@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "engines": { "node": "18.x" },
   "scripts": {
     "start": "nodemon backend/server.js",
     "server": "nodemon backend/server.js",
