@@ -12,7 +12,7 @@ import orderRoutes from "./routes/orderRoutes.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 
-const port = process.env.PORT || 5001;
+const port = process.env.PORT || 5000;
 
 connectDB();
 const app = express();
@@ -53,8 +53,8 @@ app.get("/api/config/paypal", (req, res) =>
 //   });
 // }
 
-// app.use(notFound);
-// app.use(errorHandler);
+app.use(notFound);
+app.use(errorHandler);
 
 app.get("/", (req, res) => {
   res.send("api is runnning happily");
