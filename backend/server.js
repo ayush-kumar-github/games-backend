@@ -20,7 +20,7 @@ const app = express();
 app.use(cors());
 app.use(
   cors({
-    origin: "https://gamesbyayush.vercel.app/",
+    origin: "https://gamesbyayush.vercel.app",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
   })
