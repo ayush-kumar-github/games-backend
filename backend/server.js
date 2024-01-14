@@ -17,11 +17,11 @@ const port = process.env.PORT || 5000;
 connectDB();
 const app = express();
 
-app.use(
-  cors({
-    origin: "https://gamesbyayush.vercel.app",
-  })
-);
+// app.use(
+//   cors({
+//     origin: "https://gamesbyayush.vercel.app",
+//   })
+// );
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
