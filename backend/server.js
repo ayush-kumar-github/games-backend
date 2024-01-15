@@ -53,8 +53,8 @@ app.get("/api/config/paypal", (req, res) =>
 //   });
 // }
 
-app.use(notFound);
-app.use(errorHandler);
+// app.use(notFound);
+// app.use(errorHandler);
 
 app.get("/", (req, res) => {
   res.send("api is runnning happily");
