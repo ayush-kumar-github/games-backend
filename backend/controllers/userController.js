@@ -12,7 +12,7 @@ const authUser = asyncHandler(async (req, res) => {
       name: user.name,
       email: user.email,
       isAdmin: user.isAdmin,
-      token: generateToken(res, user._id),
+      token: generateToken(user._id),
     });
   } else {
     res.status(401);
