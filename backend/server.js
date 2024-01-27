@@ -13,10 +13,10 @@ import uploadRoutes from "./routes/uploadRoutes.js";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 
 const port = process.env.PORT || 5000;
+app.use(cors());
 
 connectDB();
 const app = express();
-app.use(cors());
 // app.use(
 //   cors({
 //     origin: "https://gamesbyayush.vercel.app/",
