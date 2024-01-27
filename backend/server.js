@@ -24,7 +24,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "https://gamesbyayush.vercel.app/",
+    origin: "https://gamesbyayush.vercel.app",
     optionsSuccessStatus: 200,
     credentials: true,
   })
