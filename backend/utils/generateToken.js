@@ -5,11 +5,18 @@ const generateToken = (res, userId) => {
     expiresIn: "30d",
   });
 
+  // res.cookie("jwt", token, {
+  //   // httpOnly: true,
+  //   secure: process.env.NODE_ENV === "development",
+  //   maxAge: 30 * 24 * 60 * 60 * 1000,
+  //   // domain: "localhost",
+  //   // sameSite: "None",
+  // });
   res.cookie("jwt", token, {
-    httpOnly: true,
-    secure: process.env.NODE_ENV !== "development",
+    httpOnly: false, // Allow accessing the cookie via JavaScript
+    secure: process.env.NODE_ENV === "development",
     maxAge: 30 * 24 * 60 * 60 * 1000,
-    domain: ".games-backend-ctzu.vercel.app",
+    domain: "https://games-backend-ctzu.vercel.app", // Set your domain here
     sameSite: "None",
   });
 };

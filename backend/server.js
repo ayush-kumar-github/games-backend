@@ -22,14 +22,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-// app.use(
-//   cors()
-//   // cors({
-//   //   origin: "https://gamesbyayush.vercel.app",
-//   //   optionsSuccessStatus: 200,
-//   //   credentials: true,
-//   // })
-// );
+app.use(
+  cors({
+    origin: "https://gamesbyayush.vercel.app",
+    optionsSuccessStatus: 200,
+    credentials: true,
+  })
+);
 
 app.use("/api/products", productRoutes);
 app.use("/api/users", userRoutes);
