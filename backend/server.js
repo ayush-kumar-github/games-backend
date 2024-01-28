@@ -23,15 +23,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use(
-  cors({
-    origin: "http://localhost:3000",
-    credentials: true,
-  })
   // cors({
-  //   origin: "https://gamesbyayush.vercel.app",
-  //   optionsSuccessStatus: 200,
+  //   origin: "http://localhost:3000",
   //   credentials: true,
   // })
+  cors({
+    origin: "https://gamesbyayush.vercel.app",
+    credentials: true,
+  })
 );
 
 app.use("/api/products", productRoutes);
